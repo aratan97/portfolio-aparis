@@ -1,0 +1,52 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+.btn {
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: $transition-base;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+
+  font-family: $font-pixel;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  line-height: 1.6;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-primary {
+  background: $primary;
+  color: $text-base;
+  box-shadow: 0 4px 15px rgba($primary, 0.3);
+
+  &:hover, &:focus {
+    background: color.adjust($primary, $lightness: 10%);
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba($primary, 0.5);
+  }
+}
+
+.btn-secondary {
+  background: rgba($primary, 0.05);
+  color: $primary;
+  border: 2px solid $primary;
+  backdrop-filter: blur(4px);
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+
+  &:hover, &:focus {
+    background: rgba($primary, 0.15);
+    color: color.adjust($primary, $lightness: 10%);
+    border-color: color.adjust($primary, $lightness: 10%);
+    transform: translateY(-4px);
+  }
+}

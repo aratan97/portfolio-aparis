@@ -1,0 +1,99 @@
+@use 'variables' as *;
+@use 'sass:color'; // On importe le module moderne de Sass
+
+// ============================================================
+// SECTION HERO (HEADER)
+// ============================================================
+#hero {
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+// --- Décors (Lune et Montagnes) ---
+.moon {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, color.adjust($primary, $lightness: 20%) 30%, $primary 80%, transparent 100%);
+  box-shadow: 0 0 60px rgba($primary, 0.4);
+  image-rendering: pixelated;
+  animation: moonGlow 4s ease-in-out infinite alternate;
+  clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+  z-index: 0;
+}
+
+// ... le reste de ton code _header.scss ne change pas ...
+
+@keyframes moonGlow {
+  from { box-shadow: 0 0 40px rgba($primary, 0.3); transform: scale(1); }
+  to   { box-shadow: 0 0 80px rgba($primary, 0.6); transform: scale(1.02); }
+}
+
+.mountains {
+  height: 25vh;
+  min-height: 200px;
+  z-index: 0;
+
+  svg {
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+}
+
+// --- Avatar ---
+.avatar-container {
+  animation: float 5s ease-in-out infinite;
+  z-index: 1;
+
+  .avatar {
+    image-rendering: pixelated;
+    width: 140px;
+    height: 140px;
+    filter: drop-shadow(0 10px 20px rgba($primary, 0.2));
+  }
+
+  .avatar-glow {
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, rgba($primary, 0.15) 0%, transparent 60%);
+    border-radius: 50%;
+    animation: pulseGlow 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulseGlow {
+  from { opacity: 0.6; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1.1); }
+}
+
+// --- Textes ---
+.hero-eyebrow {
+  color: $secondary;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+.hero-name {
+  font-family: $font-titles;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  color: $text-base;
+  letter-spacing: 4px;
+  text-shadow: 2px 4px 6px rgba(0,0,0,0.8), 0 0 20px rgba($primary, 0.3);
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: $font-primary;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: $silver;
+  letter-spacing: 1px;
+  z-index: 1;
+}

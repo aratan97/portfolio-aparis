@@ -1,0 +1,46 @@
+@use 'variables' as *;
+
+// ============================================================
+// FOND GLOBAL & BASE DU BODY
+// ============================================================
+
+body {
+  background-color: $black-bg;
+  color: $text-base;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: 1.7;
+  overflow-x: hidden;
+
+  // Curseur custom rouge (format encodé pour éviter les requêtes HTTP externes)
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect x='0' y='0' width='4' height='4' fill='%23c62828'/%3E%3Crect x='4' y='4' width='4' height='4' fill='%23c62828'/%3E%3Crect x='8' y='8' width='4' height='4' fill='%23c62828'/%3E%3Crect x='12' y='12' width='4' height='4' fill='%23c62828'/%3E%3C/svg%3E") 0 0, auto;
+}
+
+// Effet ciel étoilé/particules de fond (Fixé en arrière-plan)
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  // On utilise des gradients radiaux pour simuler des étoiles
+  background-image:
+          radial-gradient(1px 1px at 10% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 100%),
+          radial-gradient(1px 1px at 40% 8%, rgba(255, 255, 255, 0.8) 0%, transparent 100%),
+          radial-gradient(1px 1px at 75% 55%, rgba(255, 255, 255, 0.5) 0%, transparent 100%),
+          radial-gradient(1px 1px at 15% 70%, rgba(255, 255, 255, 0.4) 0%, transparent 100%),
+            // Petite touche de rouge pour rappeler la DA
+          radial-gradient(2px 2px at 35% 60%, rgba($primary, 0.2) 0%, transparent 100%);
+  pointer-events: none; // Pour que les clics passent à travers les étoiles
+  z-index: -1; // Reste tout au fond
+}
+
+// Classes utilitaires de typographie globale qu'on avait laissées
+.pixel-text {
+  font-family: $font-pixel;
+  font-size: 0.65rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.cinzel-text {
+  font-family: $font-titles;
+}

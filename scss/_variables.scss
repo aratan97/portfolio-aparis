@@ -1,0 +1,26 @@
+//texte
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+//color
+$primary: #c62828;
+$secondary: #f59e0b;
+$silver: #b8c4d0;
+$sky-deep: #0f0a0a;
+
+// Variables de polices
+$font-primary: 'IM Fell English', serif;
+$font-titles: 'Cinzel', serif;
+$font-pixel: 'Press Start 2P', monospace;
+
+$font-size-base: 1.125rem;
+
+// Couleurs de texte et fonds
+$text-base: #f4e4c1;
+$text-dark: #2c1810;
+$black-bg: #0f0a0a;
+
+
+//animations
+$transition-base: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);

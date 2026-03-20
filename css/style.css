@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+body {
+  background-color: #0f0a0a;
+  color: #f4e4c1;
+  font-family: "IM Fell English", serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect x='0' y='0' width='4' height='4' fill='%23c62828'/%3E%3Crect x='4' y='4' width='4' height='4' fill='%23c62828'/%3E%3Crect x='8' y='8' width='4' height='4' fill='%23c62828'/%3E%3Crect x='12' y='12' width='4' height='4' fill='%23c62828'/%3E%3C/svg%3E") 0 0, auto;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(1px 1px at 10% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 100%), radial-gradient(1px 1px at 40% 8%, rgba(255, 255, 255, 0.8) 0%, transparent 100%), radial-gradient(1px 1px at 75% 55%, rgba(255, 255, 255, 0.5) 0%, transparent 100%), radial-gradient(1px 1px at 15% 70%, rgba(255, 255, 255, 0.4) 0%, transparent 100%), radial-gradient(2px 2px at 35% 60%, rgba(198, 40, 40, 0.2) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.pixel-text {
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.65rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.cinzel-text {
+  font-family: "Cinzel", serif;
+}
+
+.btn {
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background: #c62828;
+  color: #f4e4c1;
+  box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: rgb(217.8571428571, 71.1428571429, 71.1428571429);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(198, 40, 40, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(198, 40, 40, 0.05);
+  color: #c62828;
+  border: 2px solid #c62828;
+  backdrop-filter: blur(4px);
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+}
+.btn-secondary:hover, .btn-secondary:focus {
+  background: rgba(198, 40, 40, 0.15);
+  color: rgb(217.8571428571, 71.1428571429, 71.1428571429);
+  border-color: rgb(217.8571428571, 71.1428571429, 71.1428571429);
+  transform: translateY(-4px);
+}
+
+.custom-navbar {
+  padding: 1rem 0;
+  background: linear-gradient(180deg, rgba(15, 10, 10, 0.98) 0%, rgba(15, 10, 10, 0) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(198, 40, 40, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.custom-navbar .nav-logo-link {
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.custom-navbar .nav-logo-link:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(198, 40, 40, 0.5));
+}
+.custom-navbar .nav-logo-img {
+  height: 45px;
+  width: auto;
+}
+@media (max-width: 576px) {
+  .custom-navbar .nav-logo-img {
+    height: 35px;
+  }
+}
+.custom-navbar .navbar-nav .nav-link {
+  font-family: "Cinzel", serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #b8c4d0;
+  letter-spacing: 2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+}
+.custom-navbar .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #c62828;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.custom-navbar .navbar-nav .nav-link:hover, .custom-navbar .navbar-nav .nav-link.active {
+  color: #c62828;
+  text-shadow: 0 0 10px rgba(198, 40, 40, 0.4);
+}
+.custom-navbar .navbar-nav .nav-link:hover::after, .custom-navbar .navbar-nav .nav-link.active::after {
+  transform: scaleX(1);
+}
+.custom-navbar .custom-toggler {
+  border-color: rgba(198, 40, 40, 0.5);
+}
+.custom-navbar .custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28198, 40, 40, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.custom-navbar .custom-toggler:focus {
+  box-shadow: 0 0 10px rgba(198, 40, 40, 0.5);
+}
+
+#hero {
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.moon {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgb(226.4285714286, 113.5714285714, 113.5714285714) 30%, #c62828 80%, transparent 100%);
+  box-shadow: 0 0 60px rgba(198, 40, 40, 0.4);
+  image-rendering: pixelated;
+  animation: moonGlow 4s ease-in-out infinite alternate;
+  clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+  z-index: 0;
+}
+
+@keyframes moonGlow {
+  from {
+    box-shadow: 0 0 40px rgba(198, 40, 40, 0.3);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 0 80px rgba(198, 40, 40, 0.6);
+    transform: scale(1.02);
+  }
+}
+.mountains {
+  height: 25vh;
+  min-height: 200px;
+  z-index: 0;
+}
+.mountains svg {
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.avatar-container {
+  animation: float 5s ease-in-out infinite;
+  z-index: 1;
+}
+.avatar-container .avatar {
+  image-rendering: pixelated;
+  width: 140px;
+  height: 140px;
+  filter: drop-shadow(0 10px 20px rgba(198, 40, 40, 0.2));
+}
+.avatar-container .avatar-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(198, 40, 40, 0.15) 0%, transparent 60%);
+  border-radius: 50%;
+  animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes pulseGlow {
+  from {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+.hero-eyebrow {
+  color: #f59e0b;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+.hero-name {
+  font-family: "Cinzel", serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #f4e4c1;
+  letter-spacing: 4px;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(198, 40, 40, 0.3);
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: "IM Fell English", serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #b8c4d0;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=style.css.map */

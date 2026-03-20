@@ -1,0 +1,78 @@
+@use 'variables' as *;
+
+.custom-navbar {
+  padding: 1rem 0; // Un peu moins de padding pour laisser respirer le logo
+  background: linear-gradient(180deg, rgba(15, 10, 10, 0.98) 0%, rgba(15, 10, 10, 0.0) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba($primary, 0.1);
+  transition: $transition-base;
+
+  // Logo
+  .nav-logo-link {
+    padding: 0;
+    transition: $transition-base;
+
+    &:hover {
+      transform: scale(1.05); // Un léger effet au survol
+      filter: drop-shadow(0 0 10px rgba($primary, 0.5)); // Lueur rouge
+    }
+  }
+
+  .nav-logo-img {
+    height: 45px;
+    width: auto;
+
+    @media (max-width: 576px) {
+      height: 35px;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      font-family: $font-titles;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: $silver;
+      letter-spacing: 2px;
+      transition: $transition-base;
+      position: relative;
+      text-transform: uppercase;
+      padding: 0.5rem 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: $primary;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover, &.active {
+        color: $primary;
+        text-shadow: 0 0 10px rgba($primary, 0.4);
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  // Ton style de menu burger custom reste le même
+  .custom-toggler {
+    border-color: rgba($primary, 0.5);
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28198, 40, 40, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    &:focus {
+      box-shadow: 0 0 10px rgba($primary, 0.5);
+    }
+  }
+}
