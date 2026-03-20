@@ -48,9 +48,10 @@
   z-index: 1;
 
   .avatar {
-    image-rendering: pixelated;
+    image-rendering: pixelated; // Crucial pour le futur Pixel Art PNG
     width: 140px;
     height: 140px;
+    object-fit: contain; // Empêche la déformation
     filter: drop-shadow(0 10px 20px rgba($primary, 0.2));
   }
 
@@ -61,6 +62,16 @@
     border-radius: 50%;
     animation: pulseGlow 3s ease-in-out infinite alternate;
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pulseGlow {
+  from { opacity: 0.6; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1.1); }
 }
 
 @keyframes float {
@@ -96,4 +107,13 @@
   color: $silver;
   letter-spacing: 1px;
   z-index: 1;
+}
+
+.btn {
+  .btn-icon {
+    width: 18px; // Petite taille pour l'icône du bouton
+    height: 18px;
+    image-rendering: pixelated;
+    object-fit: contain;
+  }
 }

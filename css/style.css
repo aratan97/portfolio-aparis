@@ -188,6 +188,7 @@ body::before {
   image-rendering: pixelated;
   width: 140px;
   height: 140px;
+  object-fit: contain;
   filter: drop-shadow(0 10px 20px rgba(198, 40, 40, 0.2));
 }
 .avatar-container .avatar-glow {
@@ -198,6 +199,24 @@ body::before {
   animation: pulseGlow 3s ease-in-out infinite alternate;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes pulseGlow {
+  from {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -238,6 +257,13 @@ body::before {
   color: #b8c4d0;
   letter-spacing: 1px;
   z-index: 1;
+}
+
+.btn .btn-icon {
+  width: 18px;
+  height: 18px;
+  image-rendering: pixelated;
+  object-fit: contain;
 }
 
 /*# sourceMappingURL=style.css.map */
