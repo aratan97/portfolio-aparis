@@ -1,0 +1,40 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+body {
+  font-size: $font-size-base;
+}
+
+.section-title {
+  font-size: $font-size-title;
+  font-family: $font-titles;
+  font-weight: 900;
+  text-align: center;
+  color: $primary;
+  text-shadow: $title-shadow;
+  letter-spacing: 6px;
+}
+
+.pixel-text {
+  font-size: calc(($font-size-subtitle) - 0.4rem);
+  font-family: $font-pixel;
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-align: center;
+  color: $secondary;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+h3 {
+  font-family: $font-titles;
+  font-size: 1.6rem;
+}
+
+.pixel-divider {
+  width: 100%;
+  height: 4px;
+  margin: 5rem 0;
+  background: repeating-linear-gradient(90deg, $primary 0px, $primary 8px, transparent 8px, transparent 16px);
+  opacity: 0.2;
+}

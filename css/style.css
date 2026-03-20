@@ -2,6 +2,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 body {
+  font-size: 1.125rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: "Cinzel", serif;
+  font-weight: 900;
+  text-align: center;
+  color: #c62828;
+  text-shadow: 0 0 40px rgba(245, 158, 11, 0.4), 2px 2px 0 rgba(0, 0, 0, 0.8);
+  letter-spacing: 6px;
+}
+
+.pixel-text {
+  font-size: 0.725rem;
+  font-family: "Press Start 2P", monospace;
+  line-height: 1.6;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f59e0b;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+h3 {
+  font-family: "Cinzel", serif;
+  font-size: 1.6rem;
+}
+
+.pixel-divider {
+  width: 100%;
+  height: 4px;
+  margin: 5rem 0;
+  background: repeating-linear-gradient(90deg, #c62828 0px, #c62828 8px, transparent 8px, transparent 16px);
+  opacity: 0.2;
+}
+
+body {
   background-color: #0f0a0a;
   color: #f4e4c1;
   font-family: "IM Fell English", serif;
@@ -18,17 +56,6 @@ body::before {
   background-image: radial-gradient(1px 1px at 10% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 100%), radial-gradient(1px 1px at 40% 8%, rgba(255, 255, 255, 0.8) 0%, transparent 100%), radial-gradient(1px 1px at 75% 55%, rgba(255, 255, 255, 0.5) 0%, transparent 100%), radial-gradient(1px 1px at 15% 70%, rgba(255, 255, 255, 0.4) 0%, transparent 100%), radial-gradient(2px 2px at 35% 60%, rgba(198, 40, 40, 0.2) 0%, transparent 100%);
   pointer-events: none;
   z-index: -1;
-}
-
-.pixel-text {
-  font-family: "Press Start 2P", monospace;
-  font-size: 0.65rem;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
-
-.cinzel-text {
-  font-family: "Cinzel", serif;
 }
 
 .btn {
@@ -235,20 +262,18 @@ body::before {
     transform: scale(1.1);
   }
 }
-.hero-eyebrow {
-  color: #f59e0b;
-  letter-spacing: 2px;
-  z-index: 1;
-}
-
 .hero-name {
   font-family: "Cinzel", serif;
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
   color: #f4e4c1;
+  background: linear-gradient(to bottom, #ffffff 0%, #ef5350 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 4px;
-  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(198, 40, 40, 0.3);
-  z-index: 1;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.8));
 }
 
 .hero-title {
@@ -264,6 +289,123 @@ body::before {
   height: 18px;
   image-rendering: pixelated;
   object-fit: contain;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+@media (max-width: 900px) {
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inventory-category {
+  background: rgb(15.5571428571, 3.1428571429, 3.1428571429);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  padding: 2.5rem;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.inventory-category:hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed rgba(245, 158, 11, 0.3);
+}
+.category-header .category-icon {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+.category-header .category-title {
+  font-size: 1.4rem;
+  color: #c62828;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.slot {
+  aspect-ratio: 1;
+  background: rgba(15, 10, 10, 0.9);
+  border: 2px solid rgba(245, 158, 11, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+.slot-icon-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.slot-name {
+  font-size: 9px;
+  color: #b8c4d0;
+  text-align: center;
+  line-height: 1.2;
+}
+.slot:hover {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(245, 158, 11, 0.2);
+}
+.slot:hover .slot-icon-img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px #f59e0b);
+}
+.slot.master {
+  border-color: rgba(245, 158, 11, 0.6);
+}
+.slot.master::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 15px 15px 0;
+  border-color: transparent rgba(245, 158, 11, 0.4) transparent transparent;
+}
+.slot.legendary {
+  border-color: #c62828;
+  box-shadow: inset 0 0 15px rgba(198, 40, 40, 0.1);
+}
+.slot.legendary .slot-name {
+  color: #c62828;
+  text-shadow: 0 0 5px rgba(198, 40, 40, 0.5);
+}
+.slot.legendary:hover {
+  border-color: #c62828;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(198, 40, 40, 0.3);
 }
 
 /*# sourceMappingURL=style.css.map */

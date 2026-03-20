@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'sass:color';
 
 body {
   background-color: $black-bg;
@@ -27,16 +28,4 @@ body::before {
           radial-gradient(2px 2px at 35% 60%, rgba($primary, 0.2) 0%, transparent 100%);
   pointer-events: none; // Pour que les clics passent à travers les étoiles
   z-index: -1; // Reste tout au fond
-}
-
-// Classes utilitaires de typographie globale qu'on avait laissées
-.pixel-text {
-  font-family: $font-pixel;
-  font-size: 0.65rem;
-  line-height: 1.6;
-  text-transform: uppercase;
-}
-
-.cinzel-text {
-  font-family: $font-titles;
 }

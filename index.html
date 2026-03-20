@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arthur PARIS — Intégrateur Web</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Cinzel:wght@400;700;900&family=IM+Fell+English:ital@0;1&display=swap"
-          rel="stylesheet">
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <link rel="stylesheet" href="css/style.css">
@@ -50,7 +45,8 @@
 
 <!--header-->
 
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center text-center position-relative min-vh-100 container-fluid px-0">
+<section id="hero"
+         class="d-flex flex-column justify-content-center align-items-center text-center position-relative min-vh-100 container-fluid px-0">
 
     <div class="moon"></div>
 
@@ -75,11 +71,82 @@
     </div>
 
     <div class="mountains position-absolute bottom-0 start-0 w-100">
-        <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-100">
-            <polygon points="0,200 0,150 1440,150 1440,200" fill="#0c1119" opacity="0.8"/>
-            <polygon points="0,200 0,180 1440,180 1440,200" fill="#080c13"/>
+        <svg viewBox="0 0 1440 280" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-100">
+            <polygon
+                    points="0,280 0,180 80,120 160,160 240,90 320,140 400,70 480,130 560,100 640,150 720,80 800,130 880,110 960,140 1040,90 1120,140 1200,110 1280,150 1360,120 1440,160 1440,280"
+                    fill="#1a2744" opacity="0.4"/>
+            <polygon
+                    points="0,280 0,220 60,170 120,200 200,140 280,180 360,120 440,170 520,140 600,190 680,110 760,160 840,130 920,170 1000,120 1080,160 1160,130 1240,170 1320,140 1440,200 1440,280"
+                    fill="#1c2e50" opacity="0.6"/>
+            <polygon
+                    points="0,280 0,260 80,210 160,250 240,190 360,240 460,200 560,240 640,210 720,250 800,195 900,240 1000,210 1100,250 1200,215 1300,250 1440,240 1440,280"
+                    fill="#080c13"/>
         </svg>
     </div>
+</section>
+
+
+<!--Compétences-->
+
+<!-- INVENTAIRE -->
+<section id="inventaire" class="py-5 container">
+    <div class="section-title ">L'Inventaire</div>
+    <div class="pixel-text section-rune ">✦ COMPETENCES & ARMES ✦</div>
+
+    <div class="inventory-grid">
+        <!-- Catégorie 1 -->
+        <div class="inventory-category ">
+            <div class="category-header">
+                <img src="img/icon-test.png" alt="Icône Fondations" class="category-icon">
+                <span class="category-title">Fondations & Langages</span>
+            </div>
+            <div class="slots-grid">
+                <div class="slot master">
+                    <img src="img/icon-test.png" alt="HTML/CSS" class="slot-icon-img">
+                    <span class="pixel-text slot-name">HTML/CSS</span>
+                </div>
+                <div class="slot master">
+                    <img src="img/icon-test.png" alt="SASS" class="slot-icon-img">
+                    <span class="pixel-text slot-name">SASS</span>
+                </div>
+                <div class="slot">
+                    <img src="img/icon-test.png" alt="JS" class="slot-icon-img">
+                    <span class="pixel-text slot-name">JS</span>
+                </div>
+                <div class="slot">
+                    <img src="img/icon-test.png" alt="Bootstrap" class="slot-icon-img">
+                    <span class="pixel-text slot-name">BOOTSTRAP</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Catégorie 2 -->
+        <div class="inventory-category ">
+            <div class="category-header">
+                <img src="img/icon-test.png" alt="Icône CMS" class="category-icon">
+                <span class="category-title">Magie Noire & CMS</span>
+            </div>
+            <div class="slots-grid">
+                <div class="slot legendary">
+                    <img src="img/icon-test.png" alt="Drupal" class="slot-icon-img">
+                    <span class="pixel-text slot-name">Drupal</span>
+                </div>
+                <div class="slot master">
+                    <img src="img/icon-test.png" alt="Twig" class="slot-icon-img">
+                    <span class="pixel-text slot-name">Php storm</span>
+                </div>
+                <div class="slot">
+                    <img src="img/icon-test.png" alt="Git" class="slot-icon-img">
+                    <span class="pixel-text slot-name">Git</span>
+                </div>
+                <div class="slot">
+                    <img src="img/icon-test.png" alt="Figma" class="slot-icon-img">
+                    <span class="pixel-text slot-name">Photoshop</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pixel-divider"></div>
 </section>
 
 <script src="js/bootstrap.bundle.min.js"></script>

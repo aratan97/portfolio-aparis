@@ -27,8 +27,14 @@
 // ... le reste de ton code _header.scss ne change pas ...
 
 @keyframes moonGlow {
-  from { box-shadow: 0 0 40px rgba($primary, 0.3); transform: scale(1); }
-  to   { box-shadow: 0 0 80px rgba($primary, 0.6); transform: scale(1.02); }
+  from {
+    box-shadow: 0 0 40px rgba($primary, 0.3);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 0 80px rgba($primary, 0.6);
+    transform: scale(1.02);
+  }
 }
 
 .mountains {
@@ -65,40 +71,59 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 @keyframes pulseGlow {
-  from { opacity: 0.6; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1.1); }
+  from {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 @keyframes pulseGlow {
-  from { opacity: 0.6; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1.1); }
+  from {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
 // --- Textes ---
-.hero-eyebrow {
-  color: $secondary;
-  letter-spacing: 2px;
-  z-index: 1;
-}
 
 .hero-name {
   font-family: $font-titles;
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
   color: $text-base;
+  background: linear-gradient(to bottom, #ffffff 0%, #ef5350 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 4px;
-  text-shadow: 2px 4px 6px rgba(0,0,0,0.8), 0 0 20px rgba($primary, 0.3);
-  z-index: 1;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.8));
 }
 
 .hero-title {
