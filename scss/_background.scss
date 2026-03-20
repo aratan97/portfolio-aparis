@@ -12,7 +12,7 @@ body {
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect x='0' y='0' width='4' height='4' fill='%23c62828'/%3E%3Crect x='4' y='4' width='4' height='4' fill='%23c62828'/%3E%3Crect x='8' y='8' width='4' height='4' fill='%23c62828'/%3E%3Crect x='12' y='12' width='4' height='4' fill='%23c62828'/%3E%3C/svg%3E") 0 0, auto;
 }
 
-// Effet ciel étoilé/particules de fond (Fixé en arrière-plan)
+// Effet ciel étoilé/particules de fond (fixé en arrière-plan)
 body::before {
   content: '';
   position: fixed;
