@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 body {
   font-size: 1.125rem;
+  font-family: "IM Fell English", serif;
+  color: #b8c4d0;
 }
 
 .section-title {
@@ -72,6 +74,7 @@ body::before {
   font-size: 0.65rem;
   text-transform: uppercase;
   line-height: 1.6;
+  min-width: 315px;
 }
 .btn:focus {
   outline: none;
@@ -406,6 +409,96 @@ body::before {
 .slot.legendary:hover {
   border-color: #c62828;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(198, 40, 40, 0.3);
+}
+
+.quest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.quest-list .quest-card {
+  background: rgb(15.5571428571, 3.1428571429, 3.1428571429);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  padding: 3rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.quest-list .quest-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #f59e0b, #c62828);
+}
+.quest-list .quest-card:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  transform: translateX(10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+}
+.quest-list .quest-card .quest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+.quest-list .quest-card .quest-header .quest-name {
+  font-size: 1.6rem;
+  color: #f59e0b;
+}
+.quest-list .quest-card .quest-header .quest-date {
+  color: #b8c4d0;
+  font-style: italic;
+}
+.quest-list .quest-card .quest-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 991px) {
+  .quest-list .quest-card .quest-layout {
+    grid-template-columns: 1fr;
+  }
+}
+.quest-list .quest-card .quest-layout .quest-image-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(198, 40, 40, 0.3);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.quest-list .quest-card .quest-layout .quest-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.quest-list .quest-card .quest-layout .quest-info .quest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.quest-list .quest-card .quest-layout .quest-info .quest-tags .quest-tag {
+  font-size: 9px;
+  padding: 6px 12px;
+  background: rgba(45, 74, 34, 0.3);
+  border: 1px solid rgba(45, 74, 34, 0.6);
+  color: #a5d6a7;
+  border-radius: 4px;
+  font-family: "Press Start 2P", monospace;
 }
 
 /*# sourceMappingURL=style.css.map */

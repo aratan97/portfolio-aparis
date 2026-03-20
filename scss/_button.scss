@@ -11,11 +11,11 @@
   cursor: pointer;
   font-weight: bold;
   display: inline-block;
-
   font-family: $font-pixel;
   font-size: 0.65rem;
   text-transform: uppercase;
   line-height: 1.6;
+  min-width: 315px;
 
   &:focus {
     outline: none;

@@ -1,0 +1,107 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+.quest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  .quest-card {
+    background: $background-card;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    padding: 3rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: $transition-base;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: linear-gradient(180deg, $secondary, $primary);
+    }
+
+    &:hover {
+      border-color: rgba(201, 162, 39, 0.4);
+      transform: translateX(10px);
+      box-shadow: $shadow-deep;
+    }
+
+    .quest-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      gap: 1rem;
+
+      .quest-name {
+        font-size: 1.6rem;
+        color: $secondary;
+      }
+
+      .quest-date {
+        color: $silver;
+        font-style: italic;
+      }
+    }
+
+    .quest-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+
+      @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+      }
+
+      .quest-image-container {
+        width: 100%;
+        aspect-ratio: 16/9;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(198, 40, 40, 0.3);
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .quest-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .quest-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.8rem;
+          margin-top: 2rem;
+          padding-top: 1.5rem;
+          border-top: 1px dashed rgba(255, 255, 255, 0.1);
+
+          .quest-tag {
+            font-size: 9px;
+            padding: 6px 12px;
+            background: rgba(45, 74, 34, 0.3);
+            border: 1px solid rgba(45, 74, 34, 0.6);
+            color: #a5d6a7;
+            border-radius: 4px;
+            font-family: $font-pixel;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
