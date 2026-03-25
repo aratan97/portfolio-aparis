@@ -1,0 +1,58 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+.lore-container {
+  align-items: center;
+
+  .lore-card {
+    background: $background-card;
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+
+    .lore-avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      border: 2px solid $secondary;
+      padding: 5px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .lore-stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 11px;
+
+      .class-text {
+        color: $silver;
+        font-size: 0.6rem;
+      }
+    }
+
+    .lore-stat-row:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .lore-infos {
+    .lore-heading {
+      font-size: 2rem;
+      color: $secondary;
+      margin-bottom: 1.5rem;
+    }
+
+    .lore-paragraph {
+      color: $silver;
+    }
+  }
+}
+
+
+
+
+
